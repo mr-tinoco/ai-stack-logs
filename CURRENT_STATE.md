@@ -25,7 +25,7 @@ A seamless AI dev stack that:
 ### Phase Progress:
 | Phase | Name | Status |
 |---|---|---|
-| 1 | Foundations (Notion + Todoist) | 🟡 In progress — Goals Spec being generated |
+| 1 | Foundations (Notion + Todoist) | 🟡 In progress — Notion ✅ Todoist ❌ pending |
 | 2 | Dev Environment | 🟡 80% done — need Vercel CLI + CLAUDE.md |
 | 3 | Local AI (Ollama) | 🔴 Not started |
 | 4 | Automation (OpenClaw) | 🔴 Not started |
@@ -81,12 +81,20 @@ A seamless AI dev stack that:
 
 ## 🔮 Next Session Should Do
 
-1. ✅ ~~Ask about Notion~~ — confirmed: has "Supreme second brain north star" template under Areas
-2. **Generate Personal Goals Spec** from existing Normie AI docs (in progress this session)
-3. **Add Goals Spec to Notion** — use the Supreme second brain template as base, add Life OS structure underneath
-4. **Walk through 1.4** — Set up Todoist projects
-5. **Close out Phase 2** — Vercel CLI install + CLAUDE.md for main project
-6. Ask: Does Omar have Anthropic API key + OpenAI API key for Phase 4 agents?
+1. ✅ ~~Ask about Notion~~ — done, structure built directly via MCP
+2. ✅ ~~Generate + place Personal Goals Spec~~ — live in Notion
+3. **Step 1.4** — Set up Todoist projects (5 of them — see below)
+4. **Close out Phase 2** — `npm install -g vercel && vercel login` + create CLAUDE.md for main project
+5. **Start Phase 3** — Install Ollama from ollama.com/download/mac
+6. Ask: Does Omar have Anthropic API key + OpenAI API key? (needed for Phase 4 OpenClaw agents)
+
+### Todoist Projects Still Needed (Step 1.4)
+Create these 5 in Todoist:
+- AI Dev OS
+- Personal Goals
+- Automations
+- Life & Health
+- Travel
 
 ---
 
