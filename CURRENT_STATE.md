@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-03-07 | **Session:** 001
+> **Last updated:** 2026-03-07 | **Session:** 001 (ongoing)
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -19,13 +19,13 @@ A seamless AI dev stack that:
 
 ## 📍 Where We Are Right Now
 
-**Active Phase:** Phase 1 — Foundations (NOT STARTED YET)
-**Last completed action:** Created repos + PLAN.md (Session 001)
+**Active Phase:** Phase 1 — Foundations (IN PROGRESS)
+**Last completed action:** Upgraded guru prompt with session boot protocol. Generating Personal Goals Spec next.
 
 ### Phase Progress:
 | Phase | Name | Status |
 |---|---|---|
-| 1 | Foundations (Notion + Todoist) | 🔴 Not started |
+| 1 | Foundations (Notion + Todoist) | 🟡 In progress — Goals Spec being generated |
 | 2 | Dev Environment | 🟡 80% done — need Vercel CLI + CLAUDE.md |
 | 3 | Local AI (Ollama) | 🔴 Not started |
 | 4 | Automation (OpenClaw) | 🔴 Not started |
@@ -69,20 +69,24 @@ A seamless AI dev stack that:
 
 1. **Repo strategy:** Two repos — `ai-stack-setup` (plan + config) and `ai-stack-logs` (memory + logs)
 2. **Model routing:** Ollama handles 70-80% of OpenClaw tasks (free), Claude/OpenAI only for complex work
-3. **Cost target:** $20-30/month variable + Claude Pro subscription
+3. **Cost target:** Three tiers — Lean <$30 / Growth <$100 / Power <$200 (currently on Tier 1)
 4. **Tool hierarchy:** Cursor → Claude Code → Gemini CLI (in that order for code work)
 5. **Knowledge system:** Notion (why/context) + Todoist (what/when) + markdown files (portable)
+6. **Claude Projects → deprecated as primary brain:** Context migrated to markdown + Notion. Claude Projects kept as read-only archive.
+7. **Session memory system:** Guru prompt now has `<session_boot>` block — reads CURRENT_STATE.md at start of every session. No more cold starts.
+8. **Normie AI context fully loaded:** All key PDFs read. Goals Spec being generated from existing docs (no manual export needed).
+9. **Notion:** Omar has "Supreme second brain north star" template under Areas — use this as base for Life OS structure.
 
 ---
 
 ## 🔮 Next Session Should Do
 
-1. **Start Phase 1** — Ask Omar about Notion (does he have an account? existing structure?)
-2. Walk through 1.1 → Export Claude data
-3. Walk through 1.2 → Summarize key Claude projects into Goals Spec
-4. Walk through 1.3 → Build Notion Life OS structure
-5. Walk through 1.4 → Set up Todoist projects
-6. Then immediately close out Phase 2 (Vercel CLI + CLAUDE.md)
+1. ✅ ~~Ask about Notion~~ — confirmed: has "Supreme second brain north star" template under Areas
+2. **Generate Personal Goals Spec** from existing Normie AI docs (in progress this session)
+3. **Add Goals Spec to Notion** — use the Supreme second brain template as base, add Life OS structure underneath
+4. **Walk through 1.4** — Set up Todoist projects
+5. **Close out Phase 2** — Vercel CLI install + CLAUDE.md for main project
+6. Ask: Does Omar have Anthropic API key + OpenAI API key for Phase 4 agents?
 
 ---
 
