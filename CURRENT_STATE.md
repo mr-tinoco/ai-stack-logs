@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-03-07 | **Session:** 001 (ongoing)
+> **Last updated:** 2026-03-19 | **Session:** 003 (complete)
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -19,16 +19,16 @@ A seamless AI dev stack that:
 
 ## 📍 Where We Are Right Now
 
-**Active Phase:** Phase 2 — Dev Environment (closing out)
-**Last completed action:** Phase 1 fully complete. Todoist projects created (Step 1.4).
+**Active Phase:** Phase 4 — Automation (OpenClaw) — agents not yet built
+**Last completed action:** All 4 Ollama models installed. OpenClaw (n8n) running via Docker. All 3 API keys rotated and loaded into ~/openclaw/.env (Session 003).
 
 ### Phase Progress:
 | Phase | Name | Status |
 |---|---|---|
 | 1 | Foundations (Notion + Todoist) | ✅ COMPLETE |
-| 2 | Dev Environment | 🟡 80% done — need Vercel CLI + CLAUDE.md |
-| 3 | Local AI (Ollama) | 🔴 Not started |
-| 4 | Automation (OpenClaw) | 🔴 Not started |
+| 2 | Dev Environment | ✅ COMPLETE |
+| 3 | Local AI (Ollama) | ✅ COMPLETE |
+| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, agents not built |
 | 5 | Claude Cowork | 🔴 Not started |
 | 6 | NotebookLM | 🔴 Not started |
 | 7 | Daily Workflow Lock-in | 🔴 Not started |
@@ -43,24 +43,29 @@ A seamless AI dev stack that:
 | Claude Code | ✅ | Installed + authenticated |
 | Node.js | v25.2.0 | ✅ |
 | npm | 11.6.2 | ✅ |
-| Gemini CLI | 0.32.1 | Installed — auth status unknown, test next session |
+| Gemini CLI | 0.32.1 | ✅ |
 | Docker | 29.1.3 | ✅ Running |
 | Git | 2.50.1 | ✅ |
 | Homebrew | 5.0.16 | ✅ |
 | GitHub CLI (gh) | ✅ | Authenticated as **mr-tinoco** |
-| poppler | ✅ | Installed this session (for PDF reading) |
+| Ollama | ✅ | Running — 4 models installed |
+| llama3.2 | 2.0 GB | ✅ fast automation |
+| qwen2.5-coder:7b | 4.7 GB | ✅ code tasks |
+| qwen2.5:14b | 9.0 GB | ✅ daily driver |
+| deepseek-r1:14b | 9.0 GB | ✅ reasoning |
+| OpenClaw (n8n) | ✅ | Running at http://localhost:5678 via Docker |
+| API Keys | ✅ | Anthropic + OpenAI + Google — rotated & loaded in ~/openclaw/.env |
 
 ---
 
-## ❌ What Still Needs Installing
+## ❌ What Still Needs Doing
 
-| Tool | Phase | How |
+| Item | Phase | Notes |
 |---|---|---|
-| Vercel CLI | 2 | `npm install -g vercel && vercel login` |
-| Ollama | 3 | Download from https://ollama.com/download/mac |
-| llama3.2 model | 3 | `ollama pull llama3.2` |
-| qwen2.5-coder:7b | 3 | `ollama pull qwen2.5-coder:7b` |
-| OpenClaw | 4 | Docker compose setup in `~/openclaw/` |
+| Build Agent 1: goals-checkin | 4 | Claude, Sundays 6pm |
+| Build Agent 2: project-heartbeat | 4 | Ollama, Mondays 9am |
+| Build Agent 3: db-maintenance | 4 | Ollama, nightly 2am |
+| Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo |
 | Claude Cowork | 5 | Anthropic desktop app |
 
 ---
@@ -79,22 +84,17 @@ A seamless AI dev stack that:
 
 ---
 
-## 🔮 Next Up — Phase 2 Close-out + Phase 3
+## 🔮 Next Session — Phase 4 (OpenClaw Agents)
 
-### Phase 2 — Two items left
-1. **Step 2.5** — Install Vercel CLI: `npm install -g vercel && vercel login`
-2. **Step 2.3** — Create `CLAUDE.md` for main project (ask Omar: what is your main project right now?)
+**Pick up right here:**
+1. Open http://localhost:5678 (make sure Docker is running first)
+2. Build Agent 1: `goals-checkin` — weekly Sunday 6pm check-in via Claude
+3. Build Agent 2: `project-heartbeat` — Monday 9am git log summary via Ollama
+4. Build Agent 3: `db-maintenance` — nightly 2am cleanup via Ollama
+5. Set spend caps: Anthropic console $20/mo, OpenAI $10/mo
 
-### Phase 3 — Ollama (after Phase 2 done)
-1. Download Ollama Mac app: https://ollama.com/download/mac
-2. `ollama pull llama3.2`
-3. `ollama pull qwen2.5-coder:7b`
-4. Confirm API at http://localhost:11434
-
-### Open Questions (still needed for Phase 4)
-- Does Omar have an **Anthropic API key**? (for OpenClaw agents)
-- Does Omar have an **OpenAI API key**? (for production features)
-- What notification channel for agents? (Telegram / Discord / email)
+### Open Questions
+- What notification channel for agents? (Telegram / Discord / email — pick one)
 
 ---
 
@@ -114,12 +114,7 @@ A seamless AI dev stack that:
 
 ## 🚨 Blockers / Open Questions
 
-- [ ] Does Omar have a Notion account? What's the current structure?
-- [ ] Does Omar have a Todoist account?
-- [ ] Does Omar have an Anthropic API key (for OpenClaw agents)?
-- [ ] Does Omar have an OpenAI API key?
-- [ ] Does Omar have a Telegram/Discord for agent notifications?
-- [ ] What is Omar's main project? (needed for CLAUDE.md in Phase 2.3)
+- [ ] What notification channel for OpenClaw agents? (Telegram / Discord / email)
 
 ---
 
