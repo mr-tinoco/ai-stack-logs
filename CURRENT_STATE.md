@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-03-19 | **Session:** 003 (complete)
+> **Last updated:** 2026-03-21 | **Session:** 004 (complete)
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -14,13 +14,14 @@ A seamless AI dev stack that:
 
 **Master plan lives here:** `~/ai-stack-setup/PLAN.md`
 **GitHub:** https://github.com/mr-tinoco/ai-stack-setup
+**Normie AI repos:** https://github.com/mr-tinoco/Normieai
 
 ---
 
 ## 📍 Where We Are Right Now
 
-**Active Phase:** Phase 4 — Automation (OpenClaw) — agents not yet built
-**Last completed action:** All 4 Ollama models installed. OpenClaw (n8n) running via Docker. All 3 API keys rotated and loaded into ~/openclaw/.env (Session 003).
+**Active Phase:** Phase 5 — Claude Cowork (HQ project ready to create)
+**Last completed action (Session 004):** Full agent ecosystem finalized. Brand/content/gstack files rewritten with Normie AI voice. gstack Advisor (11th agent) added. Master setup guide built. Claude Cowork HQ system prompt ready to paste. All pushed to GitHub.
 
 ### Phase Progress:
 | Phase | Name | Status |
@@ -28,8 +29,8 @@ A seamless AI dev stack that:
 | 1 | Foundations (Notion + Todoist) | ✅ COMPLETE |
 | 2 | Dev Environment | ✅ COMPLETE |
 | 3 | Local AI (Ollama) | ✅ COMPLETE |
-| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, agents not built |
-| 5 | Claude Cowork | 🔴 Not started |
+| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, n8n workflows not yet built |
+| 5 | Claude Cowork | 🟡 IN PROGRESS — HQ system prompt ready, project not yet created in claude.ai |
 | 6 | NotebookLM | 🔴 Not started |
 | 7 | Daily Workflow Lock-in | 🔴 Not started |
 
@@ -54,7 +55,30 @@ A seamless AI dev stack that:
 | qwen2.5:14b | 9.0 GB | ✅ daily driver |
 | deepseek-r1:14b | 9.0 GB | ✅ reasoning |
 | OpenClaw (n8n) | ✅ | Running at http://localhost:5678 via Docker |
-| API Keys | ✅ | Anthropic + OpenAI + Google — rotated & loaded in ~/openclaw/.env |
+| API Keys | ✅ | Anthropic + OpenAI + Google — in ~/openclaw/.env |
+| Vercel CLI | ✅ | Authenticated as mr-tinoco |
+
+---
+
+## 🤖 Agent Ecosystem — 11 Active + 1 Paused
+
+### Layer 1 — `~/.claude/prompts/` (Claude Code slash commands)
+| Slash Command | Agent | Status |
+|---|---|---|
+| `/ceo-agent` | CEO Agent (gstack framework) | ✅ Deployed |
+| `/gstack-advisor` | gstack Advisor (ecosystem auditor) | ✅ Deployed — NEW |
+| `/crisis-manager` | Crisis Manager | ✅ Deployed |
+| `/weekly-planner` | Weekly Planner | ✅ Deployed |
+| `/ynab-agent` | YNAB Financial Specialist | ✅ Deployed |
+| `/kpi-dashboard` | KPI Dashboard | ✅ Deployed |
+| `/brand-strategist` | Brand Strategist | ✅ Deployed — rewritten Normie AI voice |
+| `/content-creator` | Content Creator | ✅ Deployed — rewritten Normie AI voice |
+| `/infrastructure-agent` | Infrastructure Agent | ✅ Deployed |
+| `/marketing-agent` | Marketing Agent | ✅ Deployed |
+| `/el-fantasma` | El Fantasma 🎤 | ⏸️ Paused until first revenue |
+
+### Layer 2 — `~/personal-os/` (shared brain — all tools)
+All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 
 ---
 
@@ -62,11 +86,14 @@ A seamless AI dev stack that:
 
 | Item | Phase | Notes |
 |---|---|---|
-| Build Agent 1: goals-checkin | 4 | Claude, Sundays 6pm |
-| Build Agent 2: project-heartbeat | 4 | Ollama, Mondays 9am |
-| Build Agent 3: db-maintenance | 4 | Ollama, nightly 2am |
+| Create Normie AI HQ in Claude Cowork | 5 | System prompt ready: `~/Cowork/projects/normie-ai-hq-system-prompt.md`. Upload 11 files from `~/personal-os/` |
+| Build n8n Workflow 1: goals-checkin | 4 | Spec: `~/openclaw/agents/agent1-goals-checkin.md`. Sunday 6pm, Claude haiku |
+| Build n8n Workflow 2: project-heartbeat | 4 | Spec: `~/openclaw/agents/agent2-project-heartbeat.md`. Monday 9am, Ollama |
+| Build n8n Workflow 3: db-maintenance | 4 | Spec: `~/openclaw/agents/agent3-db-maintenance.md`. Nightly 2am, Ollama |
+| Update docker-compose.yml volume mounts | 4 | Add personal-os + ai-stack-logs mounts (see AGENT-SETUP-GUIDE.md) |
 | Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo |
-| Claude Cowork | 5 | Anthropic desktop app |
+| List Subscription Tracker on Gumroad | REVENUE | 🔴 #1 priority — overdue |
+| Post first content on X + Threads | BRAND | 🔴 0 posts published |
 
 ---
 
@@ -77,24 +104,43 @@ A seamless AI dev stack that:
 3. **Cost target:** Three tiers — Lean <$30 / Growth <$100 / Power <$200 (currently on Tier 1)
 4. **Tool hierarchy:** Cursor → Claude Code → Gemini CLI (in that order for code work)
 5. **Knowledge system:** Notion (why/context) + Todoist (what/when) + markdown files (portable)
-6. **Claude Projects → deprecated as primary brain:** Context migrated to markdown + Notion. Claude Projects kept as read-only archive.
-7. **Session memory system:** Guru prompt now has `<session_boot>` block — reads CURRENT_STATE.md at start of every session. No more cold starts.
-8. **Normie AI context fully loaded:** All key PDFs read. Goals Spec being generated from existing docs (no manual export needed).
-9. **Notion:** Omar has "Supreme second brain north star" template under Areas — use this as base for Life OS structure.
+6. **Dual-layer agent architecture:** `~/.claude/prompts/` (Claude Code slash commands) + `~/personal-os/` (shared brain for all tools). Both populated and in sync.
+7. **Session memory system:** CURRENT_STATE.md read at start of every session. No more cold starts.
+8. **gstack principles:** Baked into CEO Agent and gstack Advisor ONLY — not into brand-facing files. Brand has its own voice: "el flow de nosotros."
+9. **Claude Cowork strategy:** ONE "Normie AI HQ" project with all agents accessible via slash commands (/ceo, /marketing, /brand, etc.) — not 8 separate projects.
+10. **Brand voice decision:** All brand/content/marketing OS files rewritten to remove corporate/YC-flavored language. Normie AI voice = bilingual, Colombian, real, Omar talking.
 
 ---
 
-## 🔮 Next Session — Phase 4 (OpenClaw Agents)
+## 📁 Key File Locations
 
-**Pick up right here:**
-1. Open http://localhost:5678 (make sure Docker is running first)
-2. Build Agent 1: `goals-checkin` — weekly Sunday 6pm check-in via Claude
-3. Build Agent 2: `project-heartbeat` — Monday 9am git log summary via Ollama
-4. Build Agent 3: `db-maintenance` — nightly 2am cleanup via Ollama
-5. Set spend caps: Anthropic console $20/mo, OpenAI $10/mo
+| File | Purpose |
+|---|---|
+| `~/personal-os/AGENT-SETUP-GUIDE.md` | Master setup guide for all 3 platforms |
+| `~/personal-os/INDEX.md` | Agent roster + routing guide |
+| `~/Cowork/projects/normie-ai-hq-system-prompt.md` | Ready-to-paste Cowork system prompt |
+| `~/openclaw/agents/agent*.md` | n8n workflow specs |
+| `~/openclaw/docker-compose.yml` | OpenClaw container config |
+| `~/ai-stack-setup/` | GitHub backup of all OS files + prompts |
 
-### Open Questions
-- What notification channel for agents? (Telegram / Discord / email — pick one)
+---
+
+## 🔮 Next Session — Pick Up Here
+
+**Option A (fastest value):** List Subscription Tracker on Gumroad
+→ Use `/marketing-agent` or Cowork HQ → Marketing mode
+→ Copy: `~/personal-os/marketing-os.md` has the Gumroad description ready to use
+
+**Option B (complete Cowork setup):** Create Normie AI HQ in Claude Cowork
+→ Go to claude.ai → New Project → Name: "🧠 Normie AI HQ"
+→ Paste system prompt from: `~/Cowork/projects/normie-ai-hq-system-prompt.md`
+→ Upload 11 files from `~/personal-os/`
+
+**Option C (complete automation):** Build OpenClaw n8n workflows
+→ Open http://localhost:5678
+→ Follow `~/personal-os/AGENT-SETUP-GUIDE.md` Part 3 — node by node
+
+**Recommended order:** A → B → C. Revenue first.
 
 ---
 
@@ -102,19 +148,17 @@ A seamless AI dev stack that:
 
 - GitHub: **mr-tinoco**
 - Machine: macOS (Apple Silicon — M-series)
-- RAM: 16GB (inferred from guide recommendations)
-- Main editor: Cursor
-- Uses Claude Pro subscription
-- Goal: Build automated AI system for dev work + personal life management
-- Reference docs:
-  - `/Users/omar/Documents/LLM/AI Stack Setup Guide.pdf`
-  - `/Users/omar/Documents/LLM/OMAR_AI_STACK_SETUP.md`
+- AMD Linux Infrastructure Engineer — $250K/yr — NON-NEGOTIABLE to protect
+- North star: $400K income + $5M net worth by December 31, 2030
+- Current side income: $0
+- Main editor: Cursor + Claude Code
 
 ---
 
 ## 🚨 Blockers / Open Questions
 
-- [ ] What notification channel for OpenClaw agents? (Telegram / Discord / email)
+- [ ] Notification channel for OpenClaw agents? (Telegram recommended — pick and set up)
+- [ ] Gumroad listing for Subscription Tracker — this is the #1 revenue blocker
 
 ---
 
