@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-03-21 | **Session:** 004 (complete)
+> **Last updated:** 2026-03-29 | **Session:** 005 (complete)
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -21,7 +21,7 @@ A seamless AI dev stack that:
 ## 📍 Where We Are Right Now
 
 **Active Phase:** Phase 5 — Claude Cowork (HQ project ready to create)
-**Last completed action (Session 004):** Full agent ecosystem finalized. Brand/content/gstack files rewritten with Normie AI voice. gstack Advisor (11th agent) added. Master setup guide built. Claude Cowork HQ system prompt ready to paste. All pushed to GitHub.
+**Last completed action (Session 005):** QA Agent ecosystem fully deployed. Main agent prompt + 3 companion skills built (qa-run, ux-audit, market-scan). INDEX.md, tech-os.md, CURRENT_STATE.md, Notion all updated. Logs written. All pushed to GitHub.
 
 ### Phase Progress:
 | Phase | Name | Status |
@@ -60,22 +60,30 @@ A seamless AI dev stack that:
 
 ---
 
-## 🤖 Agent Ecosystem — 11 Active + 1 Paused
+## 🤖 Agent Ecosystem — 12 Active + 1 Paused
 
 ### Layer 1 — `~/.claude/prompts/` (Claude Code slash commands)
 | Slash Command | Agent | Status |
 |---|---|---|
 | `/ceo-agent` | CEO Agent (gstack framework) | ✅ Deployed |
-| `/gstack-advisor` | gstack Advisor (ecosystem auditor) | ✅ Deployed — NEW |
+| `/gstack-advisor` | gstack Advisor (ecosystem auditor) | ✅ Deployed |
 | `/crisis-manager` | Crisis Manager | ✅ Deployed |
 | `/weekly-planner` | Weekly Planner | ✅ Deployed |
 | `/ynab-agent` | YNAB Financial Specialist | ✅ Deployed |
 | `/kpi-dashboard` | KPI Dashboard | ✅ Deployed |
-| `/brand-strategist` | Brand Strategist | ✅ Deployed — rewritten Normie AI voice |
-| `/content-creator` | Content Creator | ✅ Deployed — rewritten Normie AI voice |
+| `/brand-strategist` | Brand Strategist | ✅ Deployed |
+| `/content-creator` | Content Creator | ✅ Deployed |
 | `/infrastructure-agent` | Infrastructure Agent | ✅ Deployed |
 | `/marketing-agent` | Marketing Agent | ✅ Deployed |
+| `/qa-agent` | QA Agent (testing + UX + market intel) | ✅ Deployed — NEW Session 005 |
 | `/el-fantasma` | El Fantasma 🎤 | ⏸️ Paused until first revenue |
+
+### QA Agent Skills — `~/.claude/skills/`
+| Skill | File | What it does |
+|---|---|---|
+| `/qa-run` | `qa-run.md` | Full 9-phase QA pass with ship/hold verdict |
+| `/ux-audit` | `ux-audit.md` | Nielsen heuristics + user empathy map |
+| `/market-scan` | `market-scan.md` | Competitor research + market gap analysis |
 
 ### Layer 2 — `~/personal-os/` (shared brain — all tools)
 All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
@@ -86,14 +94,14 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 
 | Item | Phase | Notes |
 |---|---|---|
+| **List Subscription Tracker on Gumroad** | REVENUE | 🔴 #1 priority — overdue. Run `/qa-run` on it first. |
 | Create Normie AI HQ in Claude Cowork | 5 | System prompt ready: `~/Cowork/projects/normie-ai-hq-system-prompt.md`. Upload 11 files from `~/personal-os/` |
 | Build n8n Workflow 1: goals-checkin | 4 | Spec: `~/openclaw/agents/agent1-goals-checkin.md`. Sunday 6pm, Claude haiku |
 | Build n8n Workflow 2: project-heartbeat | 4 | Spec: `~/openclaw/agents/agent2-project-heartbeat.md`. Monday 9am, Ollama |
 | Build n8n Workflow 3: db-maintenance | 4 | Spec: `~/openclaw/agents/agent3-db-maintenance.md`. Nightly 2am, Ollama |
 | Update docker-compose.yml volume mounts | 4 | Add personal-os + ai-stack-logs mounts (see AGENT-SETUP-GUIDE.md) |
 | Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo |
-| List Subscription Tracker on Gumroad | REVENUE | 🔴 #1 priority — overdue |
-| Post first content on X + Threads | BRAND | 🔴 0 posts published |
+| **Post first content on X + Threads** | BRAND | 🔴 0 posts published |
 
 ---
 
@@ -109,6 +117,7 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 8. **gstack principles:** Baked into CEO Agent and gstack Advisor ONLY — not into brand-facing files. Brand has its own voice: "el flow de nosotros."
 9. **Claude Cowork strategy:** ONE "Normie AI HQ" project with all agents accessible via slash commands (/ceo, /marketing, /brand, etc.) — not 8 separate projects.
 10. **Brand voice decision:** All brand/content/marketing OS files rewritten to remove corporate/YC-flavored language. Normie AI voice = bilingual, Colombian, real, Omar talking.
+11. **QA Agent architecture:** QA lives as a sub-agent of Technical Guru. Three companion skills (qa-run, ux-audit, market-scan) handle targeted use cases. Skills stored in `~/.claude/skills/`.
 
 ---
 
@@ -121,15 +130,20 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 | `~/Cowork/projects/normie-ai-hq-system-prompt.md` | Ready-to-paste Cowork system prompt |
 | `~/openclaw/agents/agent*.md` | n8n workflow specs |
 | `~/openclaw/docker-compose.yml` | OpenClaw container config |
+| `~/.config/claude/prompts/qa-agent.md` | QA Agent prompt |
+| `~/.claude/skills/qa-run.md` | Full QA pass skill |
+| `~/.claude/skills/ux-audit.md` | UX audit skill |
+| `~/.claude/skills/market-scan.md` | Market scan skill |
 | `~/ai-stack-setup/` | GitHub backup of all OS files + prompts |
 
 ---
 
 ## 🔮 Next Session — Pick Up Here
 
-**Option A (fastest value):** List Subscription Tracker on Gumroad
-→ Use `/marketing-agent` or Cowork HQ → Marketing mode
-→ Copy: `~/personal-os/marketing-os.md` has the Gumroad description ready to use
+**Option A (fastest value — DO THIS FIRST):** List Subscription Tracker on Gumroad
+→ Run `/qa-run https://subscription-tracker-alpha-tawny.vercel.app` for confidence check
+→ Use the QA report bullet points in your Gumroad listing
+→ Copy Gumroad description from: `~/personal-os/marketing-os.md`
 
 **Option B (complete Cowork setup):** Create Normie AI HQ in Claude Cowork
 → Go to claude.ai → New Project → Name: "🧠 Normie AI HQ"

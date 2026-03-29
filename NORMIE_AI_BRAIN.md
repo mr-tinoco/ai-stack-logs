@@ -130,13 +130,15 @@ This is emotionally significant — every session should acknowledge progress to
 
 ## 🛠️ PROJECTS HISTORY
 
-### Subscription Tracker ✅ SHIPPED
-- **Built:** Dec 2025 | **Shipped:** Jan 5, 2026
-- **Stack:** Vanilla JS, HTML, CSS, localStorage, Vercel
-- **Monetization:** Gumroad (planned) / Stripe
-- **Repo:** github.com/mr-tinoco/[subscription-tracker]
-- **Context file:** `~/Documents/LLM/Claude/subscription-tracker-claude-context.md`
-- **Significance:** First shipped product. Breaking the $0 barrier.
+### Subscription Tracker ✅ V1.1 SHIPPED (Mar 2026)
+- **Built:** Dec 2025 | **V1.0 Shipped:** Jan 5, 2026 | **V1.1 Shipped:** Mar 2026
+- **Live URL:** https://subscription-tracker-alpha-tawny.vercel.app
+- **Stack:** Vanilla JS, HTML, CSS, localStorage, Vercel (no frameworks)
+- **Repo:** github.com/mr-tinoco/subscription-tracker
+- **V1.1 features:** Edit, CSV export, categories (8), pie+bar charts, search/filter, dark mode, EN/ES toggle, USD↔COP, landing page, Spanish landing + ?lang= param
+- **Monetization:** 🚨 Gumroad listing = next action → first paying customer
+- **CLAUDE.md:** `~/Normieai/subscription-tracker/CLAUDE.md`
+- **Significance:** First shipped product. Every feature is live. Now we monetize.
 
 ### NomadTracker 🟡 CONCEPT
 - Travel expense management app
@@ -303,7 +305,8 @@ Con esa sonrisa brillaste al sol
 | 2025-11 | Subscription Tracker project started. CEO Mentor v3. India schedule conflicts. |
 | 2025-12 | Subscription Tracker built (vanilla JS). |
 | 2026-01 | Subscription Tracker shipped (first product). El Fantasma chat. |
-| 2026-03 | AI stack setup begins. This session. Migrating org to persistent files + OpenClaw. |
+| 2026-03 | AI stack setup begins. Session 001. Migrating org to persistent files + OpenClaw. |
+| 2026-03-14 | Session 002. Subscription Tracker V1.1 fully shipped. Landing page, Spanish toggle, ?lang= param, dark mode, CSV export, categories, charts all live. Logs + Notion synced. |
 
 ---
 
