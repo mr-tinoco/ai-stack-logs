@@ -130,15 +130,17 @@ This is emotionally significant — every session should acknowledge progress to
 
 ## 🛠️ PROJECTS HISTORY
 
-### Subscription Tracker ✅ V1.1 SHIPPED (Mar 2026)
-- **Built:** Dec 2025 | **V1.0 Shipped:** Jan 5, 2026 | **V1.1 Shipped:** Mar 2026
+### SubTracker ✅ V1.2 SHIPPED (Apr 2026)
+- **Built:** Dec 2025 | **V1.0:** Jan 5, 2026 | **V1.1:** Mar 2026 | **V1.2:** Apr 1, 2026
 - **Live URL:** https://subscription-tracker-alpha-tawny.vercel.app
 - **Stack:** Vanilla JS, HTML, CSS, localStorage, Vercel (no frameworks)
-- **Repo:** github.com/mr-tinoco/subscription-tracker
-- **V1.1 features:** Edit, CSV export, categories (8), pie+bar charts, search/filter, dark mode, EN/ES toggle, USD↔COP, landing page, Spanish landing + ?lang= param
-- **Monetization:** 🚨 Gumroad listing = next action → first paying customer
+- **Repo:** github.com/mr-tinoco/subscription-tracker (this is what Vercel watches — NOT the Normieai monorepo)
+- **Positioning (V1.2):** Budget tracker that starts with subscriptions — not just a subscription tracker
+- **V1.1 features:** Edit, CSV export, categories (8), pie+bar charts, search/filter, dark mode, EN/ES toggle, USD↔COP, landing page, Spanish landing
+- **V1.2 features:** Full dark mode landing page, budget-first copy, emoji feature cards, creator quote block, $273/month stat section, "vs spreadsheet" comparison, scroll animations, budget language in app UI (Monthly Budget Impact, etc.)
+- **Monetization:** 🚨 Gumroad listing = next action → first paying customer. Copy is ready in `~/Documents/Claude/Projects/Normie AI HQ/subtracker-marketing-audit.md`
 - **CLAUDE.md:** `~/Normieai/subscription-tracker/CLAUDE.md`
-- **Significance:** First shipped product. Every feature is live. Now we monetize.
+- **Key lesson:** Vercel auto-deploy watches `mr-tinoco/subscription-tracker` repo — always push there, not to Normieai monorepo
 
 ### NomadTracker 🟡 CONCEPT
 - Travel expense management app
@@ -307,6 +309,8 @@ Con esa sonrisa brillaste al sol
 | 2026-01 | Subscription Tracker shipped (first product). El Fantasma chat. |
 | 2026-03 | AI stack setup begins. Session 001. Migrating org to persistent files + OpenClaw. |
 | 2026-03-14 | Session 002. Subscription Tracker V1.1 fully shipped. Landing page, Spanish toggle, ?lang= param, dark mode, CSV export, categories, charts all live. Logs + Notion synced. |
+| 2026-03-29 | Session 005. QA Agent deployed. SubTracker marketing audit + V1.2 spec written by marketing agent. |
+| 2026-04-01 | Session 007. SubTracker V1.2 fully shipped. Full dark mode landing page. Budget-first positioning ("budget tracker that starts with subscriptions"). New sections: creator quote, $273 stat, vs-spreadsheet comparison, scroll animations. All copy rewritten. Fixed Vercel deploy issue (now pushes to correct repo). |
 
 ---
 

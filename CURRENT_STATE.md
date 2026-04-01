@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-03-29 | **Session:** 005 (complete)
+> **Last updated:** 2026-04-01 | **Session:** 007 (complete)
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -20,16 +20,25 @@ A seamless AI dev stack that:
 
 ## 📍 Where We Are Right Now
 
-**Active Phase:** Phase 5 — Claude Cowork (HQ project ready to create)
-**Last completed action (Session 005):** QA Agent ecosystem fully deployed. Main agent prompt + 3 companion skills built (qa-run, ux-audit, market-scan). INDEX.md, tech-os.md, CURRENT_STATE.md, Notion all updated. Logs written. All pushed to GitHub.
+**Active Phase:** SubTracker monetization — V1.2 shipped, Gumroad listing is next
+**Last completed action (Session 007):** Full SubTracker V1.2 landing page overhaul deployed to Vercel. Also fixed a critical deploy issue — Vercel was watching the wrong repo.
 
-### Phase Progress:
+### SubTracker Status:
+| Item | Status |
+|---|---|
+| V1.1 features (edit, CSV, charts, dark mode, EN/ES, USD/COP) | ✅ Live |
+| V1.2 landing page (dark mode, budget positioning, new sections) | ✅ Live — deployed today |
+| Gumroad listing | 🔴 NOT DONE — #1 priority next session |
+| Real screenshot swap (replace CSS mockup) | 🟡 Pending — do alongside Gumroad |
+| Vercel Analytics (1 line of code) | 🟡 Pending |
+
+### Stack Phase Progress:
 | Phase | Name | Status |
 |---|---|---|
 | 1 | Foundations (Notion + Todoist) | ✅ COMPLETE |
 | 2 | Dev Environment | ✅ COMPLETE |
 | 3 | Local AI (Ollama) | ✅ COMPLETE |
-| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, n8n workflows not yet built |
+| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, n8n Workflow 1 mid-build (paused) |
 | 5 | Claude Cowork | 🟡 IN PROGRESS — HQ system prompt ready, project not yet created in claude.ai |
 | 6 | NotebookLM | 🔴 Not started |
 | 7 | Daily Workflow Lock-in | 🔴 Not started |
@@ -94,14 +103,15 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 
 | Item | Phase | Notes |
 |---|---|---|
-| **List Subscription Tracker on Gumroad** | REVENUE | 🔴 #1 priority — overdue. Run `/qa-run` on it first. |
+| **List SubTracker on Gumroad** | REVENUE | 🔴 #1 priority. Copy is ready: `~/Documents/Claude/Projects/Normie AI HQ/subtracker-marketing-audit.md` |
+| **Take real dark-mode screenshot** | REVENUE | Open app.html, add sample subs, screenshot at 1280px, save as screenshot.png, swap CSS mockup |
+| **Add Vercel Analytics** | REVENUE | 1 line in index.html `<head>`: `<script defer src="/_vercel/insights/script.js"></script>` + enable in Vercel dashboard |
+| **Post launch content on X + Threads** | BRAND | 🔴 3 ready-to-paste posts in marketing audit file |
 | Create Normie AI HQ in Claude Cowork | 5 | System prompt ready: `~/Cowork/projects/normie-ai-hq-system-prompt.md`. Upload 11 files from `~/personal-os/` |
-| Build n8n Workflow 1: goals-checkin | 4 | Spec: `~/openclaw/agents/agent1-goals-checkin.md`. Sunday 6pm, Claude haiku |
+| Build n8n Workflow 1: goals-checkin | 4 | Paused mid-build. See "Resume Here" section below. |
 | Build n8n Workflow 2: project-heartbeat | 4 | Spec: `~/openclaw/agents/agent2-project-heartbeat.md`. Monday 9am, Ollama |
 | Build n8n Workflow 3: db-maintenance | 4 | Spec: `~/openclaw/agents/agent3-db-maintenance.md`. Nightly 2am, Ollama |
-| Update docker-compose.yml volume mounts | 4 | Add personal-os + ai-stack-logs mounts (see AGENT-SETUP-GUIDE.md) |
 | Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo |
-| **Post first content on X + Threads** | BRAND | 🔴 0 posts published |
 
 ---
 
@@ -140,21 +150,50 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 
 ## 🔮 Next Session — Pick Up Here
 
-**Option A (fastest value — DO THIS FIRST):** List Subscription Tracker on Gumroad
-→ Run `/qa-run https://subscription-tracker-alpha-tawny.vercel.app` for confidence check
-→ Use the QA report bullet points in your Gumroad listing
-→ Copy Gumroad description from: `~/personal-os/marketing-os.md`
+### 🔴 #1 PRIORITY — List SubTracker on Gumroad
 
-**Option B (complete Cowork setup):** Create Normie AI HQ in Claude Cowork
-→ Go to claude.ai → New Project → Name: "🧠 Normie AI HQ"
-→ Paste system prompt from: `~/Cowork/projects/normie-ai-hq-system-prompt.md`
-→ Upload 11 files from `~/personal-os/`
+This is the revenue unlock. Everything is ready. Just needs to be done.
 
-**Option C (complete automation):** Build OpenClaw n8n workflows
-→ Open http://localhost:5678
-→ Follow `~/personal-os/AGENT-SETUP-GUIDE.md` Part 3 — node by node
+1. Go to gumroad.com → New Product → Digital Product
+2. Title: `Stop Throwing Money at Subscriptions You Forgot About`
+3. Price: $12 (one-time)
+4. Description: copy from `~/Documents/Claude/Projects/Normie AI HQ/subtracker-marketing-audit.md` → section "Gumroad Listing Copy"
+5. Cover image: take a dark-mode screenshot of the app (see below)
+6. Once live → update href in index.html (both Gumroad buttons) + push to `mr-tinoco/subscription-tracker`
 
-**Recommended order:** A → B → C. Revenue first.
+### 🟡 #2 — Take Real Screenshot (do this before Gumroad listing)
+
+1. Open https://subscription-tracker-alpha-tawny.vercel.app/app.html
+2. Toggle to dark mode
+3. Add sample subs: Netflix $15.99, Spotify $9.99, Claude Pro $20, GitHub Pro $4, ChatGPT $20, Notion $10
+4. Screenshot at 1280px wide
+5. Save as `screenshot.png` in `~/Normieai/subscription-tracker/`
+6. In index.html replace the entire `.mockup-card` div with:
+```html
+<div class="mockup-card">
+  <img src="screenshot.png" class="rounded-2xl shadow-2xl w-full border border-slate-700" alt="SubTracker — budget tracker for subscriptions, dark mode screenshot" />
+</div>
+```
+7. Push to `mr-tinoco/subscription-tracker`
+
+### 🟡 #3 — Vercel Analytics (5 minutes)
+
+Add to `index.html` inside `<head>`:
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+Then go to Vercel dashboard → subscription-tracker project → Analytics → Enable.
+
+### ⏸️ PAUSED — n8n Workflow 1 (goals-checkin)
+
+Workflow 1 has 3 nodes: Schedule Trigger → Read File → HTTP Request
+HTTP Request getting "Bad request" — needs a Code node inserted between Read File and HTTP Request.
+**Resume after first Gumroad sale.** Full instructions preserved in Session 006 log.
+
+### 🔴 #4 — Post Launch Content
+
+3 posts ready to paste in `~/Documents/Claude/Projects/Normie AI HQ/subtracker-marketing-audit.md` → "Launch Post Copy" section.
+Post on X and Threads the same day as Gumroad listing goes live.
 
 ---
 
