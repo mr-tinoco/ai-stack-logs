@@ -1,6 +1,34 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-04-01 | **Session:** 007 (complete)
+> **Last updated:** 2026-04-06 | **Session:** 008 (in progress) | **gstack Audit:** April 5, 2026
 > **Read this at the start of every Claude Code session.**
+
+---
+
+## 🏗️ gstack Advisor Audit — April 5, 2026
+
+> **Ecosystem Score: 63/100** — Functional but needs significant work.
+> **Critical finding:** Gumroad listing has been #1 priority for 2+ sessions. Still not done. This is the only blocker to first revenue.
+
+### CEO: Read This Before Planning Anything
+
+**The system is over-built for $0 revenue.** Everything needed to list SubTracker on Gumroad exists. The only missing piece is the act of doing it. Every session that ends without a Gumroad listing is execution failure, not a planning problem.
+
+**May 1 milestone scope has been reset (Mode 4 applied):**
+
+| Milestone | Original | Revised |
+|---|---|---|
+| SubTracker on Gumroad | May 1 | This week — non-negotiable |
+| First paying customer | May 1 | Attempt by May 1 |
+| Social content started | "consistent" by May 1 | First posts same day as Gumroad |
+| Vercel Analytics | May 1 | This week (5 min task) |
+| NomadTracker V1 | May 1 | **Deferred to June** — not realistic |
+| $500+/month | May 1 | **Deferred to June** — not realistic from cold launch |
+| OpenClaw full automation | May 1 | After first revenue, as planned |
+
+**This week's single action:** SubTracker live on Gumroad + 3 social posts published.
+**No new agents, tools, or automations until first revenue lands.**
+
+**Bilingual opportunity flagged:** Post launch content in Spanish too. EN/ES toggle is already built. Use it in the brand.
 
 ---
 
@@ -69,11 +97,12 @@ A seamless AI dev stack that:
 
 ---
 
-## 🤖 Agent Ecosystem — 12 Active + 1 Paused
+## 🤖 Agent Ecosystem — 13 Active + 1 Paused
 
-### Layer 1 — `~/.claude/prompts/` (Claude Code slash commands)
+### Layer 1 — `~/.claude/commands/` (Claude Code slash commands)
 | Slash Command | Agent | Status |
 |---|---|---|
+| `/notion-agent-optimizer` | Notion Agent Optimizer (OS health + sync) | ✅ Deployed — NEW Session 008 |
 | `/ceo-agent` | CEO Agent (gstack framework) | ✅ Deployed |
 | `/gstack-advisor` | gstack Advisor (ecosystem auditor) | ✅ Deployed |
 | `/crisis-manager` | Crisis Manager | ✅ Deployed |
@@ -84,8 +113,17 @@ A seamless AI dev stack that:
 | `/content-creator` | Content Creator | ✅ Deployed |
 | `/infrastructure-agent` | Infrastructure Agent | ✅ Deployed |
 | `/marketing-agent` | Marketing Agent | ✅ Deployed |
-| `/qa-agent` | QA Agent (testing + UX + market intel) | ✅ Deployed — NEW Session 005 |
+| `/qa-agent` | QA Agent (testing + UX + market intel) | ✅ Deployed — Session 005 |
 | `/el-fantasma` | El Fantasma 🎤 | ⏸️ Paused until first revenue |
+
+### Notion Agent Optimizer Skills — `~/.claude/skills/`
+| File | Sub-Routine | Auto-triggers when |
+|---|---|---|
+| `notion-agent-optimizer-session-start.md` | SR-1: Session Briefing | Every session start |
+| `notion-agent-optimizer-weekly-health.md` | SR-2: Weekly Health Check | Friday/Sunday or "weekly check" |
+| `notion-agent-optimizer-drift-detect.md` | SR-3: Project Drift Detection | Project names mentioned |
+| `notion-agent-optimizer-sync-check.md` | SR-4: Database Sync Check | "sync", files out of date |
+| `notion-agent-optimizer-transition-check.md` | SR-5: Transition Readiness | Milestones/deadlines mentioned |
 
 ### QA Agent Skills — `~/.claude/skills/`
 | Skill | File | What it does |
