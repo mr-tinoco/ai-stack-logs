@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-04-06 | **Session:** 008 (in progress) | **gstack Audit:** April 5, 2026
+> **Last updated:** 2026-04-11 | **Session:** 009 | **gstack Audit:** April 5, 2026
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -66,7 +66,7 @@ A seamless AI dev stack that:
 | 1 | Foundations (Notion + Todoist) | ✅ COMPLETE |
 | 2 | Dev Environment | ✅ COMPLETE |
 | 3 | Local AI (Ollama) | ✅ COMPLETE |
-| 4 | Automation (OpenClaw) | 🟡 IN PROGRESS — infra up, n8n Workflow 1 mid-build (paused) |
+| 4 | Automation (OpenClaw) | ✅ COMPLETE — all 3 agents built, tested, and active |
 | 5 | Claude Cowork | 🟡 IN PROGRESS — HQ system prompt ready, project not yet created in claude.ai |
 | 6 | NotebookLM | 🔴 Not started |
 | 7 | Daily Workflow Lock-in | 🔴 Not started |
@@ -146,10 +146,7 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 | **Add Vercel Analytics** | REVENUE | 1 line in index.html `<head>`: `<script defer src="/_vercel/insights/script.js"></script>` + enable in Vercel dashboard |
 | **Post launch content on X + Threads** | BRAND | 🔴 3 ready-to-paste posts in marketing audit file |
 | Create Normie AI HQ in Claude Cowork | 5 | System prompt ready: `~/Cowork/projects/normie-ai-hq-system-prompt.md`. Upload 11 files from `~/personal-os/` |
-| Build n8n Workflow 1: goals-checkin | 4 | Paused mid-build. See "Resume Here" section below. |
-| Build n8n Workflow 2: project-heartbeat | 4 | Spec: `~/openclaw/agents/agent2-project-heartbeat.md`. Monday 9am, Ollama |
-| Build n8n Workflow 3: db-maintenance | 4 | Spec: `~/openclaw/agents/agent3-db-maintenance.md`. Nightly 2am, Ollama |
-| Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo |
+| Set spend caps | 4 | Anthropic $20/mo, OpenAI $10/mo — still unset |
 
 ---
 
@@ -222,11 +219,24 @@ Add to `index.html` inside `<head>`:
 ```
 Then go to Vercel dashboard → subscription-tracker project → Analytics → Enable.
 
-### ⏸️ PAUSED — n8n Workflow 1 (goals-checkin)
+### ✅ DONE — OpenClaw Agents (Session 009)
 
-Workflow 1 has 3 nodes: Schedule Trigger → Read File → HTTP Request
-HTTP Request getting "Bad request" — needs a Code node inserted between Read File and HTTP Request.
-**Resume after first Gumroad sale.** Full instructions preserved in Session 006 log.
+All 3 agents built, tested, and active in n8n (localhost:5678):
+
+| Agent | ID | Schedule | Model | Output |
+|---|---|---|---|---|
+| Agent 1 — Goals Check-in | BYmFjNa7NugAddPO | Sunday 6 PM | claude-haiku-4-5-20251001 | `~/ai-stack-logs/weekly-reviews/` |
+| Agent 2 — Project Heartbeat | openclaw2heartbeat | Monday 9 AM | qwen2.5:14b (free) | `~/ai-stack-logs/heartbeats/` |
+| Agent 3 — DB Maintenance | openclaw3maintain | Nightly 2 AM | llama3.2 (free) | `~/ai-stack-logs/maintenance/` |
+
+**Key infra facts learned this session:**
+- n8n model API: use `claude-haiku-4-5-20251001` (NOT claude-3-5-haiku — different generation)
+- HTTP Request body: use `contentType: raw` + `rawContentType: application/json` (not `contentType: json`)
+- Code nodes: use `var` not `const`, no template literals, no `await` in code nodes
+- File I/O: `require('fs')` works (NODE_FUNCTION_ALLOW_BUILTIN=fs,path,child_process)
+- Git commands: `require('child_process').execSync` works — git 2.49.1 is in the container
+- Workflow management: use `docker exec openclaw n8n import:workflow` to bypass UI entirely
+- Available Anthropic models: claude-haiku-4-5-20251001, claude-sonnet-4-5-20250929, claude-opus-4-5-20251101
 
 ### 🔴 #4 — Post Launch Content
 
