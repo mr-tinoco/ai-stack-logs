@@ -1,5 +1,5 @@
 # 🟢 Current State — Omar's AI Stack
-> **Last updated:** 2026-04-11 | **Session:** 009 | **gstack Audit:** April 5, 2026
+> **Last updated:** 2026-04-11 | **Session:** 010 | **gstack Audit:** April 5, 2026
 > **Read this at the start of every Claude Code session.**
 
 ---
@@ -91,13 +91,16 @@ A seamless AI dev stack that:
 | qwen2.5-coder:7b | 4.7 GB | ✅ code tasks |
 | qwen2.5:14b | 9.0 GB | ✅ daily driver |
 | deepseek-r1:14b | 9.0 GB | ✅ reasoning |
-| OpenClaw (n8n) | ✅ | Running at http://localhost:5678 via Docker |
-| API Keys | ✅ | Anthropic + OpenAI + Google — in ~/openclaw/.env |
+| OpenClaw (n8n) | ✅ | Running at http://localhost:5678 via Docker — 4 agents active |
+| API Keys | ✅ | Anthropic + OpenAI + Google + Telegram + Discord — in ~/openclaw/.env |
 | Vercel CLI | ✅ | Authenticated as mr-tinoco |
+| OpenAI Codex CLI | 0.120.0 | ✅ Installed — `codex` command, config at ~/.codex/config.toml |
+| Telegram Bot | NormieClaw | ✅ @mr_tinoco_bot — dispatcher live |
+| Ollama custom models | normie-daily / normie-coder / normie-reason | ✅ Context-aware local models |
 
 ---
 
-## 🤖 Agent Ecosystem — 13 Active + 1 Paused
+## 🤖 Agent Ecosystem — 13 Active + 1 Paused + 4 OpenClaw
 
 ### Layer 1 — `~/.claude/commands/` (Claude Code slash commands)
 | Slash Command | Agent | Status |
@@ -219,24 +222,66 @@ Add to `index.html` inside `<head>`:
 ```
 Then go to Vercel dashboard → subscription-tracker project → Analytics → Enable.
 
-### ✅ DONE — OpenClaw Agents (Session 009)
+### ✅ DONE — OpenClaw Full Ecosystem (Sessions 009–010)
 
-All 3 agents built, tested, and active in n8n (localhost:5678):
+All 4 agents active in n8n (localhost:5678):
 
 | Agent | ID | Schedule | Model | Output |
 |---|---|---|---|---|
 | Agent 1 — Goals Check-in | BYmFjNa7NugAddPO | Sunday 6 PM | claude-haiku-4-5-20251001 | `~/ai-stack-logs/weekly-reviews/` |
 | Agent 2 — Project Heartbeat | openclaw2heartbeat | Monday 9 AM | qwen2.5:14b (free) | `~/ai-stack-logs/heartbeats/` |
 | Agent 3 — DB Maintenance | openclaw3maintain | Nightly 2 AM | llama3.2 (free) | `~/ai-stack-logs/maintenance/` |
+| Agent 4 — The Dispatcher | openclaw4dispatcher | Every 1 min | Routes auto | Telegram + Discord replies |
 
-**Key infra facts learned this session:**
-- n8n model API: use `claude-haiku-4-5-20251001` (NOT claude-3-5-haiku — different generation)
-- HTTP Request body: use `contentType: raw` + `rawContentType: application/json` (not `contentType: json`)
-- Code nodes: use `var` not `const`, no template literals, no `await` in code nodes
+**Session 010 additions:**
+- Telegram bot: NormieClaw (@mr_tinoco_bot) — token + chat ID in ~/openclaw/.env
+- Discord webhook wired to all 4 agents
+- Agent 2 upgraded to auto-discover git repos (no more hardcoding)
+- Agent 4 (Dispatcher): routes Telegram messages to CEO/Technical/Status/Crisis/Brand/Financial/Infra agents
+- Task queue: ~/ai-stack-logs/task-queue/ — phone tasks auto-executed at next Claude Code session
+- Technical Guru session_boot updated to read task queue automatically
+
+### ✅ DONE — Unified AI OS (Session 010)
+
+All LLMs now share context via CURRENT_STATE.md as single source of truth:
+
+| Tool | How it loads context | Command |
+|---|---|---|
+| Claude Code | session_boot reads CURRENT_STATE.md | `claude` |
+| Gemini CLI | ~/.gemini/GEMINI.md auto-loaded | `gemini` |
+| OpenAI Codex | ~/.codex/config.toml auto-loaded | `codex` |
+| Ollama (daily) | Baked into normie-daily Modelfile | `ai-daily` |
+| Ollama (code) | Baked into normie-coder Modelfile | `ai-code` |
+| Ollama (reason) | Baked into normie-reason Modelfile | `ai-reason` |
+| OpenAI quick | Injects CURRENT_STATE.md per call | `ai "question"` |
+| Phone | Telegram @mr_tinoco_bot dispatcher | Message bot |
+
+**New shell commands (open new terminal to activate):**
+- `ai-route` — shows which tool to use for any task
+- `stack-status` — Ollama models + OpenClaw + task queue depth
+- `ai-daily` / `ai-code` / `ai-reason` — context-aware local models
+- `ai "question"` — OpenAI gpt-4o-mini with full context
+- `checkpoint "note"` — save mid-session progress note
+- `resume-context` — prints context to paste into any AI tool
+
+**New files created this session:**
+- `~/.gemini/GEMINI.md` — Gemini global context
+- `~/.codex/config.toml` — Codex CLI config
+- `~/AGENTS.md` — Codex global context
+- `~/personal-os/model-routing.md` — routing guide for all tools
+- `~/openclaw/GEMINI.md` — project Gemini context
+- `~/Normieai/subscription-tracker/GEMINI.md` — project Gemini context
+- `~/ai-stack-logs/task-queue/` — phone task queue directory
+- Ollama custom models: normie-daily, normie-coder, normie-reason
+- OpenAI Codex CLI installed: v0.120.0
+
+**Key infra facts:**
+- n8n model API: use `claude-haiku-4-5-20251001` (NOT claude-3-5-haiku)
+- HTTP Request body: use `contentType: raw` + `rawContentType: application/json`
+- Code nodes: use `var` not `const`, no template literals, no `await`
 - File I/O: `require('fs')` works (NODE_FUNCTION_ALLOW_BUILTIN=fs,path,child_process)
-- Git commands: `require('child_process').execSync` works — git 2.49.1 is in the container
-- Workflow management: use `docker exec openclaw n8n import:workflow` to bypass UI entirely
-- Available Anthropic models: claude-haiku-4-5-20251001, claude-sonnet-4-5-20250929, claude-opus-4-5-20251101
+- Workflow management: `docker exec openclaw n8n import:workflow`
+- All API keys load from ~/openclaw/.env via .zshrc on every terminal open
 
 ### 🔴 #4 — Post Launch Content
 
