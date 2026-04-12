@@ -166,6 +166,7 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 9. **Claude Cowork strategy:** ONE "Normie AI HQ" project with all agents accessible via slash commands (/ceo, /marketing, /brand, etc.) — not 8 separate projects.
 10. **Brand voice decision:** All brand/content/marketing OS files rewritten to remove corporate/YC-flavored language. Normie AI voice = bilingual, Colombian, real, Omar talking.
 11. **QA Agent architecture:** QA lives as a sub-agent of Technical Guru. Three companion skills (qa-run, ux-audit, market-scan) handle targeted use cases. Skills stored in `~/.claude/skills/`.
+12. **Portable OS:** Full stack restores on any Mac or Linux machine with one curl command. `bootstrap.sh --cloud` = 15 min. `bootstrap.sh --full` = full Ollama stack. Mac mini stays as always-on server (OpenClaw + Telegram Dispatcher keep running regardless).
 
 ---
 
@@ -183,6 +184,34 @@ All 14 files present. See `~/personal-os/INDEX.md` for full routing guide.
 | `~/.claude/skills/ux-audit.md` | UX audit skill |
 | `~/.claude/skills/market-scan.md` | Market scan skill |
 | `~/ai-stack-setup/` | GitHub backup of all OS files + prompts |
+| `~/ai-stack-setup/bootstrap.sh` | **One-command restore on any Mac or Linux machine** |
+
+---
+
+## 🧳 Portable Setup — New Machine in 15 Minutes
+
+**One-liner (paste on any Mac or Linux terminal):**
+```bash
+bash <(curl -s https://raw.githubusercontent.com/mr-tinoco/ai-stack-setup/main/bootstrap.sh)
+```
+
+**Two modes:**
+| Mode | Command | Time | What you get |
+|---|---|---|---|
+| Cloud | `./bootstrap.sh` (default) | ~15 min | Claude + Gemini + Codex + dotfiles + CURRENT_STATE.md |
+| Full | `./bootstrap.sh --full` | 2-4 hrs | Everything + Docker + Ollama models (~25GB) |
+
+**What the script installs automatically:**
+- brew (Mac) or detects apt/dnf/pacman/zypper/apk (Linux)
+- Node.js via nvm (universal, all Linux distros)
+- Claude Code, Gemini CLI, OpenAI Codex CLI
+- All dotfiles: .zshrc, .gemini/GEMINI.md, AGENTS.md, .codex/config.toml
+- Clones ai-stack-setup + ai-stack-logs (gets CURRENT_STATE.md immediately)
+- Prompts once for API keys → saves to ~/openclaw/.env
+
+**API keys:** Keep in phone notes or password manager. Script prompts once per machine.
+
+**Key fact:** Mac mini stays running at home. Telegram Dispatcher (@mr_tinoco_bot) and all OpenClaw agents keep working regardless of what machine you're on.
 
 ---
 
