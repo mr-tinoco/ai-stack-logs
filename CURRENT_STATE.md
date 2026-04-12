@@ -4,10 +4,11 @@
 
 ---
 
-## 🏗️ gstack Advisor Audit — April 5, 2026
+## 🏗️ gstack Advisor Audit — April 11, 2026 (Updated)
 
-> **Ecosystem Score: 63/100** — Functional but needs significant work.
-> **Critical finding:** Gumroad listing has been #1 priority for 2+ sessions. Still not done. This is the only blocker to first revenue.
+> **Ecosystem Score: 74/100** _(up from 63 on April 5)_ — Stack is reproducible, portable, and fully operational.
+> **Score ceiling:** ~80 until Gumroad is live. Infrastructure without revenue is a hobby, not an ecosystem.
+> **Critical finding:** SubTracker Gumroad listing is still the only blocker to first revenue. Everything else is ready.
 
 ### CEO: Read This Before Planning Anything
 
@@ -316,6 +317,35 @@ All LLMs now share context via CURRENT_STATE.md as single source of truth:
 
 3 posts ready to paste in `~/Documents/Claude/Projects/Normie AI HQ/subtracker-marketing-audit.md` → "Launch Post Copy" section.
 Post on X and Threads the same day as Gumroad listing goes live.
+
+---
+
+### 🟢 GREENLIT (after first Gumroad payment): Stock Scanner — Normie AI Product #2
+
+**CEO + gstack consensus:** Stock scanner is approved in principle. Build begins only after SubTracker has a live Gumroad listing AND first paying customer.
+
+**Why the stack is ready:**
+- OpenClaw (n8n) → scheduled scans (cron, market hours)
+- Telegram bot → real-time alerts to phone (already live)
+- Discord webhook → secondary alerts (already live)
+- Docker → containerize Python scanner
+- Ollama → local AI to interpret signals (free)
+- Claude Code → build it
+
+**Positioning:** Normie AI product #2 — recurring revenue ($29/month SaaS vs SubTracker's $12 one-time). Stronger business model.
+
+**V1 scope (one focused session):**
+- One user-defined ticker list
+- One signal type (moving average crossover OR RSI threshold)
+- Telegram alert on trigger
+- Daily cron via OpenClaw
+- No UI in V1
+
+**V2+ (deferred):** Web dashboard, multi-user, Ollama signal interpretation, earnings alerts, payment integration
+
+**Compliance note:** "Not financial advice" wrapper required from day one if this becomes a product.
+
+**Unlock condition:** SubTracker Gumroad listing live + first payment received → then say "start stock scanner" in Claude Code.
 
 ---
 
